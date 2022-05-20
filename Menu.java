@@ -1,17 +1,19 @@
 import java.util.Scanner;
 
 public class Menu {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        Boolean loop = true;
-        int choice;
+    // public static void main(String[] args) {
+        protected Scanner scan = new Scanner(System.in);
+        protected Boolean loop = true;
+        protected int choice;
 
-        System.out.println("|*-----------------------------------------*|");
-        System.out.println("|*Option 1:                                *|");
-        System.out.println("|*Option 2:                                *|");
-        System.out.println("|*Option 3:                                *|");
-        System.out.println("|*Option 4: Thoat.                         *|");
-        System.out.println("|*-----------------------------------------*|");
+        public Menu()
+        {
+            System.out.println("|*-----------------------------------------*|");
+            System.out.println("|*Option 1:                                *|");
+            System.out.println("|*Option 2:                                *|");
+            System.out.println("|*Option 3:                                *|");
+            System.out.println("|*Option 4: Thoat.                         *|");
+            System.out.println("|*-----------------------------------------*|");
 
         do {
             choice = scan.nextInt();
