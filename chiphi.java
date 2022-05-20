@@ -1,34 +1,58 @@
-public class chiphi{
-    private long dien;
-    private double nuoc;
-    private double anuong;
-    private double chiphikhac;
+import java.util.Scanner;
 
-    public void setDien(long dien){
-        this.dien=dien;
+public class ChiPhi{
+    private int dien;
+    private int nuoc;
+    private int anuong;
+    private int chiphikhac;
+
+    public void setDien(int dien) {
+        this.dien = dien;
     }
-    public void setNuoc(double nuoc){
-        this.nuoc=nuoc;
+
+    public void setNuoc(int nuoc) {
+        this.nuoc = nuoc;
     }
-    public void setAnUong(double anuong){
-        this.anuong=anuong;
+    
+    public void setAnUong(int anuong) {
+        this.anuong = anuong;
     }
-    public void setChiPhiKhac(double chiphikhac){
-        this.chiphikhac=chiphikhac;
+
+    public void setChiPhiKhac(int chiphikhac) {
+        this.chiphikhac = chiphikhac;
     }
-    public double getNuoc(){
+
+    public int getNuoc() {
         return this.nuoc;
     }
-    public long getDien(){
+
+    public int getDien() {
         return this.dien;
     }
-    public double getAnUong(){
+
+    public int getAnUong() {
         return this.anuong;
     }
-    public double getChiPhiKhac(){
+
+    public int getChiPhiKhac() {
         return this.chiphikhac;
     }
-    public long getChiPhi(){
-        return (long) (getDien()+getNuoc()+getChiPhiKhac()+getAnUong());
+    
+    public int getChiPhi() {
+        return (int) (getDien()+getNuoc()+getChiPhiKhac()+getAnUong());
+    }
+
+    public void input() {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Nhập chi phí:");
+        System.out.print("Nhập tiền điện: ");
+        this.dien = scan.nextInt(); 
+        System.out.print("Nhập tiền nước: ");
+        this.nuoc = scan.nextInt(); 
+        System.out.print("Nhập tiền ăn uống: ");
+        this.anuong = scan.nextInt(); 
+        System.out.print("Nhập tiền chi phí khác: ");
+        this.chiphikhac = scan.nextInt(); 
+        scan.close();
     }
 }

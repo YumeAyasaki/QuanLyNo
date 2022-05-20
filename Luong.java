@@ -1,6 +1,8 @@
+import java.util.Scanner;
+
 public class Luong {
-    private int luongBa = 0;
-    private int luongMa = 0;
+    private int luongChong = 0;
+    private int luongVo = 0;
     private int luongChung = 0;
 
     // Constructor
@@ -8,26 +10,40 @@ public class Luong {
 
     }
 
-    public Luong(int luongBa, int luongMa, int luongChung) {
-        this.luongBa = luongBa;
-        this.luongMa = luongMa;
+    public Luong(int luongChong, int luongVo, int luongChung) {
+        this.luongChong = luongChong;
+        this.luongVo = luongVo;
         this.luongChung = luongChung;
     }
 
     public Luong(Luong luong) {
-        this.luongBa = luong.luongBa;
-        this.luongMa = luong.luongMa;
+        this.luongChong = luong.luongChong;
+        this.luongVo = luong.luongVo;
         this.luongChung = luong.luongChung;
     }
 
     // Other method
     public int getLuong() {
-        return luongBa + luongMa + luongChung;
+        return luongChong + luongVo + luongChung;
     }
 
-    public void setLuong(int luongBa, int luongMa, int luongChung) { // Using for input
-        this.luongBa = luongBa;
-        this.luongMa = luongMa;
+    public void setLuong(int luongChong, int luongVo, int luongChung) { // Using for input
+        this.luongChong = luongChong;
+        this.luongVo = luongVo;
         this.luongChung = luongChung;
+    }
+
+    public void input()
+    {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Nhập lương: ");
+        System.out.print("Nhập lương chồng: ");
+        int luongChong = scan.nextInt();
+        System.out.print("Nhập lương vợ: ");
+        int luongVo = scan.nextInt();
+        System.out.print("Nhập lương chung: ");
+        int luongChung = scan.nextInt();
+        this.setLuong(luongChong, luongVo, luongChung);
+        scan.close();
     }
 }
