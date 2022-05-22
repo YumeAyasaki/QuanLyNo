@@ -1,11 +1,10 @@
 import java.util.Scanner;
 
 public class Menu {
-    protected Scanner scan = new Scanner(System.in);
     protected Boolean loop = true;
     protected int choice;
 
-    public int createMenu()
+    public int createMenu(Scanner scanner)
     {
         System.out.println("|*--Chuong trinh quan ly chi tieu hang thang--*|");
         System.out.println("|*Option 1:       Nhap luong va chi phi       *|");
@@ -16,7 +15,7 @@ public class Menu {
         System.out.println("|*--------------------------------------------*|");
 
         do {
-            choice = scan.nextInt();
+            choice = scanner.nextInt();
             if (choice >= 1 && choice <= 5) {
                 loop = false;
             }
@@ -24,7 +23,6 @@ public class Menu {
                 System.out.println("Chon lai");
             }
         } while (loop);
-        scan.close();
         return choice;
     }
 }

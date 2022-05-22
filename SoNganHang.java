@@ -60,15 +60,14 @@ public class SoNganHang {
         return (int) (this.getSoTienGui() * 6 / 100);
     }
 
-    public void input() {
-        Scanner scan = new Scanner(System.in);
+    public void input(Scanner scanner) {
         System.out.println("Nhập số tiền muốn gửi tiết kiệm: ");
-        int temp = scan.nextInt();
+        int temp = scanner.nextInt();
         this.setSoTienGui(temp);
         System.out.println("Chọn kỳ hạn: \n 1. 6 tháng (6%)\n 2. 1 năm(6.6%)");
         Boolean loop = true;
         do {
-            temp = scan.nextInt();
+            temp = scanner.nextInt();
             switch (temp) {
                 case 1:
                     this.setKyHan(false);
@@ -83,6 +82,5 @@ public class SoNganHang {
                     break;
             }
         } while (loop);
-        scan.close();
     }
 }

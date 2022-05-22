@@ -42,17 +42,15 @@ public class ChiPhi{
         return (int) (getDien()+getNuoc()+getChiPhiKhac()+getAnUong());
     }
 
-    public void input() {
-        Scanner scan = new Scanner(System.in);
+    public void input(Scanner scanner) {
         System.out.println("Nhập chi phí:");
         System.out.print("Nhập tiền điện: ");
-        this.dien = scan.nextInt(); 
+        this.dien = scanner.nextInt(); 
         System.out.print("Nhập tiền nước: ");
-        this.nuoc = scan.nextInt(); 
+        this.nuoc = scanner.nextInt(); 
         System.out.print("Nhập tiền ăn uống: ");
-        this.anuong = scan.nextInt(); 
+        this.anuong = scanner.nextInt(); 
         System.out.print("Nhập tiền chi phí khác: ");
-        this.chiphikhac = scan.nextInt(); 
-        scan.close();
+        this.chiphikhac = scanner.nextInt(); 
     }
 }

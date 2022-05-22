@@ -33,17 +33,16 @@ public class Luong {
         this.luongChung = luongChung;
     }
 
-    public void input()
+    public void input(Scanner scanner)
     {
-        Scanner scan = new Scanner(System.in);
         System.out.println("Nhập lương: ");
         System.out.print("Nhập lương chồng: ");
-        int luongChong = scan.nextInt();
+        scanner.nextLine();
+        luongChong = scanner.nextInt();
         System.out.print("Nhập lương vợ: ");
-        int luongVo = scan.nextInt();
+        luongVo = scanner.nextInt();
         System.out.print("Nhập lương chung: ");
-        int luongChung = scan.nextInt();
+        luongChung = scanner.nextInt();
         this.setLuong(luongChong, luongVo, luongChung);
-        scan.close();
     }
 }
