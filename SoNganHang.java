@@ -61,10 +61,10 @@ public class SoNganHang {
     }
 
     public void input(Scanner scanner) {
-        System.out.println("Nhập số tiền muốn gửi tiết kiệm: ");
+        System.out.println("Nhap so tien muon gui tiet kiem: ");
         int temp = scanner.nextInt();
         this.setSoTienGui(temp);
-        System.out.println("Chọn kỳ hạn: \n 1. 6 tháng (6%)\n 2. 1 năm(6.6%)");
+        System.out.println("Chon ky han: \n 1. 6 thang (6%)\n 2. 1 nam(6.6%)");
         Boolean loop = true;
         do {
             temp = scanner.nextInt();

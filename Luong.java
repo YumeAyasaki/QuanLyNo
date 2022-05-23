@@ -35,13 +35,13 @@ public class Luong {
 
     public void input(Scanner scanner)
     {
-        System.out.println("Nhập lương: ");
-        System.out.print("Nhập lương chồng: ");
+        System.out.println("Nhap luong: ");
+        System.out.print("Nhap luong chong: ");
         scanner.nextLine();
         luongChong = scanner.nextInt();
-        System.out.print("Nhập lương vợ: ");
+        System.out.print("Nhap luong vo: ");
         luongVo = scanner.nextInt();
-        System.out.print("Nhập lương chung: ");
+        System.out.print("Nhap luong chung: ");
         luongChung = scanner.nextInt();
         this.setLuong(luongChong, luongVo, luongChung);
     }
