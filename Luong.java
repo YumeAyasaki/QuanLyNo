@@ -23,6 +23,18 @@ public class Luong {
     }
 
     // Other method
+    public int getLuongChong() {
+        return luongChong;
+    }
+
+    public int getLuongVo() {
+        return luongVo;
+    }
+
+    public int getLuongChung() {
+        return luongChung;
+    }
+
     public int getLuong() {
         return luongChong + luongVo + luongChung;
     }

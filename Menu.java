@@ -25,4 +25,25 @@ public class Menu {
         } while (loop);
         return choice;
     }
+
+    public void showStatus(Luong luong, ChiPhi chiPhi, NganHang nganHang, KhoanNo khoanNo1, KhoanNo khoanNo2) {
+        // Luong
+        System.out.println("Luong: ");
+        System.out.println("    + Chong: " + Integer.toString(luong.getLuongChong()) +        
+        " | Vo: " + Integer.toString(luong.getLuongVo()) + 
+        " | Chung: " + Integer.toString(luong.getLuongChung()));
+
+        // Chi phi
+        System.out.println("Chi phi: ");
+        System.out.println("    + Dien: " + Integer.toString(chiPhi.getDien()) + 
+        " | Nuoc: " + Integer.toString(chiPhi.getNuoc()) + 
+        " | An uong: " + Integer.toString(chiPhi.getAnUong()) + 
+        " | Khac:" + Integer.toString(chiPhi.getChiPhiKhac()));
+
+        // Ngan hang
+        System.out.println("Ngan hang: ");
+        System.out.println("   + Lai chung: " + Integer.toString(nganHang.getLais()));
+
+        // Khoan no
+    }
 }

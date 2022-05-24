@@ -15,6 +15,7 @@ public class Main {
         
         boolean isExit = false;
         do {
+            menu.showStatus(luong, chiPhi, nganHang, khoanNo100tr, khoanNo220tr);
             int choose = menu.createMenu(scanner);
             switch (choose) {
                 case 1:

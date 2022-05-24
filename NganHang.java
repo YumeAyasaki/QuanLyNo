@@ -8,4 +8,12 @@ public class NganHang {
         soNganHang.input(scanner);
         khoanGui.add(soNganHang);
     }
+
+    public int getLais() {
+        int ans = 0;
+        for (int i = 0; i < khoanGui.size(); ++i) {
+            ans += khoanGui.get(i).getLai();
+        }
+        return ans;
+    }
 }
