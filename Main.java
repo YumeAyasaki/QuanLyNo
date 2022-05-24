@@ -1,6 +1,17 @@
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
+    public static void clrscr(){
+        //Clears Screen in java
+        try {
+            if (System.getProperty("os.name").contains("Windows"))
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            else
+                Runtime.getRuntime().exec("clear");
+        } catch (IOException | InterruptedException ex) {}
+    }
+
     public static void main(String[] args) {
         // Initialize
         Scanner scanner = new Scanner(System.in);
@@ -15,6 +26,7 @@ public class Main {
         
         boolean isExit = false;
         do {
+            clrscr();
             menu.showStatus(luong, chiPhi, nganHang, khoanNo100tr, khoanNo220tr);
             int choose = menu.createMenu(scanner);
             switch (choose) {
