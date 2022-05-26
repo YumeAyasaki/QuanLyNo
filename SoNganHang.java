@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class SoNganHang {
     protected int soTienGui = 0;
     protected Date ngayGui = new Date();
+    protected Date ngayTra = new Date();
     protected Boolean kyHan = false; // false = 6 thang, true = 1 nam
 
     public SoNganHang() {
@@ -52,6 +53,16 @@ public class SoNganHang {
         this.kyHan = kyHan;
     }
 
+    public void setNgayTra(Date ngayGui)
+    {
+        this.ngayTra = ngayGui;
+        if (getKyHan()) {
+            this.ngayTra.plusMonths(12);
+        } else {
+            this.ngayTra.plusMonths(6);
+        }
+    }
+
     public int getLai()
     {
         if (this.getKyHan()) {
@@ -60,21 +71,23 @@ public class SoNganHang {
         return (int) (this.getSoTienGui() * 6 / 100);
     }
 
-    public void input(Scanner scanner) {
+    public void input(Scanner scanner, Luong luong) {
         System.out.println("Nhap so tien muon gui tiet kiem: ");
         int temp = scanner.nextInt();
         this.setSoTienGui(temp);
-        System.out.println("Chon ky han: \n 1. 6 thang (6%)\n 2. 1 nam(6.6%)");
+        System.out.println("Chon ky han: \n 1. 6 thang (6%)\n 2. 1 nam (6.6%)");
         Boolean loop = true;
         do {
             temp = scanner.nextInt();
             switch (temp) {
                 case 1:
                     this.setKyHan(false);
+                    loop = false;
                     break;
 
                 case 2:
                     this.setKyHan(true);
+                    loop = false;
                     break;
 
                 default:
@@ -82,5 +95,6 @@ public class SoNganHang {
                     break;
             }
         } while (loop);
+        luong.setLuongVoChong(luong.getLuongVoChong() - temp);
     }
 }

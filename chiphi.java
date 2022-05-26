@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ChiPhi{
+public class ChiPhi {
     private int dien;
     private int nuoc;
     private int anuong;

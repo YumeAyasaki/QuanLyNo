@@ -1,5 +1,4 @@
 public class Date {
-    protected int day = 01;
     protected int month = 05;
     protected int year = 2022;
 
@@ -8,23 +7,16 @@ public class Date {
 
     }
 
-    public Date(int day, int month, int year)
+    public Date(int month, int year)
     {
-        this.day = day;
         this.month = month;
         this.year = year;
     }
 
     public Date(Date newDate)
     {
-        this.day = newDate.day;
         this.month = newDate.month;
         this.year = newDate.year;
-    }
-
-    public int getDay()
-    {
-        return this.day;
     }
     
     public int getMonth()
@@ -35,11 +27,6 @@ public class Date {
     public int getYear()
     {
         return this.year;
-    }
-
-    public void setDay(int day)
-    {
-        this.day = day;
     }
     
     public void setMonth(int month)
