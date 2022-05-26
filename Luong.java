@@ -40,18 +40,18 @@ public class Luong {
     public void setLuongVoChong(int luongVoChong) {
         this.luongVoChong = luongVoChong;
     }
-    
-    public void setLuongChung(int luongChung) {
-        this.luongChung = luongChung;
-    }
 
     public void setLuong(int luongVoChong, int luongChung) { // Using for input
-        this.luongVoChong += luongVoChong;
+        this.luongVoChong = luongVoChong;
         this.luongChung = luongChung;
     }
 
     public void setLuongChungDu(int luongChungDu) {
         this.luongChungDu = luongChungDu;
+    }
+
+    public void setLuongChung(int luongChung) {
+        this.luongChung = luongChung;
     }
 
     public void input(Scanner scanner)

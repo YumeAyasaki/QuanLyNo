@@ -92,6 +92,11 @@ public class Main {
                     check[1] = true;
                     break;
                 case 2:
+                    if (check[1] == false)
+                    {
+                        System.out.println("Ban chua nhap luong va chi phi.");
+                        break;
+                    }
                     if (check[2] == true) {
                         System.out.println("Ban da tra chi phi.");
                         break;
@@ -103,14 +108,28 @@ public class Main {
                     check[2] = true;
                     break;
                 case 3:
+                    if (check[1] == false)
+                    {
+                        System.out.println("Ban chua nhap luong va chi phi.");
+                        break;
+                    }
                     if (check[3] == true) {
                         System.out.println("Ban da gui ngan hang.");
+                        break;
+                    }
+                    if (luong.getLuongVoChong() < 10) {
+                        System.out.println("So tien khong du de thuc hien giao dich nay.");
                         break;
                     }
                     nganHang.add(scanner, luong);
                     check[3] = true;
                     break;
                 case 4:
+                    if (check[1] == false)
+                    {
+                        System.out.println("Ban chua nhap luong va chi phi.");
+                        break;
+                    }
                     if (check[4] == true) {
                         System.out.println("Ban da tra no.");
                         break;

@@ -66,9 +66,9 @@ public class SoNganHang {
     public int getLai()
     {
         if (this.getKyHan()) {
-            return (int) (this.getSoTienGui() * 6.6 / 100);
+            return (int) (this.getSoTienGui() * 6.6 / 100 + this.getSoTienGui());
         }
-        return (int) (this.getSoTienGui() * 6 / 100);
+        return (int) (this.getSoTienGui() * 6 / 100 + this.getSoTienGui());
     }
 
     public void input(Scanner scanner, Luong luong) {
@@ -95,6 +95,7 @@ public class SoNganHang {
                     break;
             }
         } while (loop);
+        setNgayTra(ngayGui);
         luong.setLuongVoChong(luong.getLuongVoChong() - temp);
     }
 }
