@@ -75,6 +75,7 @@ public class SoNganHang {
         System.out.println("Nhap so tien muon gui tiet kiem: ");
         int temp = scanner.nextInt();
         this.setSoTienGui(temp);
+        luong.setLuongVoChong(luong.getLuongVoChong() - temp);
         System.out.println("Chon ky han: \n 1. 6 thang (6%)\n 2. 1 nam (6.6%)");
         Boolean loop = true;
         do {
@@ -96,6 +97,5 @@ public class SoNganHang {
             }
         } while (loop);
         setNgayTra(ngayGui);
-        luong.setLuongVoChong(luong.getLuongVoChong() - temp);
     }
 }
