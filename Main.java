@@ -40,6 +40,7 @@ public class Main {
     }
 
     public static boolean traTienLai(Luong luong, NganHang nganHang, KhoanNo khoanNo1, KhoanNo khoanno2, Date today, Scanner scanner) {
+        khoanno2.inputLai(scanner);
         int laiNoChung = khoanNo1.getLai(today) + khoanno2.getLai(today);
         int laiNganHang = nganHang.getLais(today);
 
@@ -70,13 +71,14 @@ public class Main {
         ChiPhi chiPhi = new ChiPhi();
         NganHang nganHang = new NganHang();
         Date today = new Date(5, 2022);
-        KhoanNo khoanNo1 = new KhoanNo(100000000, true, today);
-        KhoanNo khoanNo2 = new KhoanNo(220000000, false, today);
+        KhoanNo khoanNo1 = new KhoanNo(100000000, true, new Date(5, 2022)); // Co dinh?
+        KhoanNo khoanNo2 = new KhoanNo(220000000, false, new Date(5, 2022)); // Co dinh?
         Boolean[] check = {false, false, false, false, false, false, false, false, false};
 
         Menu menu = new Menu();
         
         boolean isExit = false;
+        today.plusMonths(1);
         do {
             clrscr();
             menu.showStatus(luong, chiPhi, nganHang, khoanNo1, khoanNo2, today);
@@ -115,10 +117,6 @@ public class Main {
                     }
                     if (check[3] == true) {
                         System.out.println("Ban da gui ngan hang.");
-                        break;
-                    }
-                    if (luong.getLuongVoChong() < 10) {
-                        System.out.println("So tien khong du de thuc hien giao dich nay.");
                         break;
                     }
                     nganHang.add(scanner, luong);

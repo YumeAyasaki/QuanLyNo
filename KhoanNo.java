@@ -4,7 +4,7 @@ public class KhoanNo {
     protected int soTienNo;
     protected Date ngayTraNo;
     protected boolean chuKy = false; // false: thang, linh hoat | true: nam, co dinh
-    protected double phanTramLai = 6.6;
+    protected double phanTramLai = 0;
     
     public KhoanNo()
     {
@@ -16,6 +16,9 @@ public class KhoanNo {
         this.soTienNo = soTienNo;
         this.chuKy = chuKy;
         this.ngayTraNo = ngayTraNo;
+        if (chuKy) {
+            phanTramLai = 6.6;
+        }
     }
 
     public void inputLai(Scanner scanner) {

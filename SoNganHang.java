@@ -73,11 +73,21 @@ public class SoNganHang {
 
     public void input(Scanner scanner, Luong luong) {
         System.out.println("Nhap so tien muon gui tiet kiem: ");
-        int temp = scanner.nextInt();
+        boolean loop = true;
+        int temp = 0;
+        do {
+            temp = scanner.nextInt();
+            if (temp <= luong.getLuongVoChong() && temp > 500000) {
+                loop = false;
+            } else {
+                System.out.println("So tien khong hop le !");
+            }
+        } while (loop);
+
         this.setSoTienGui(temp);
         luong.setLuongVoChong(luong.getLuongVoChong() - temp);
         System.out.println("Chon ky han: \n 1. 6 thang (6%)\n 2. 1 nam (6.6%)");
-        Boolean loop = true;
+        loop = true;
         do {
             temp = scanner.nextInt();
             switch (temp) {
