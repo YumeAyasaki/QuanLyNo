@@ -152,6 +152,7 @@ public class Main {
                                 check[i] = false;
                             }
                             luong.setLuongChungDu(luong.getLuongChungDu() + luong.getLuongChung() + luong.getLuongVoChong());
+                            luong.setLuongVoChong(0);
                         }
                     }
                     else {
