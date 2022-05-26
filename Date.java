@@ -60,4 +60,8 @@ public class Date {
             month -= temp * 12;
         }
     }
+
+    public int diffMonths(Date date) {
+        return Math.abs(date.year * 12 + date.month - month - year * 12);
+    }
 }
