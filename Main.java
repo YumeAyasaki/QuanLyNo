@@ -37,16 +37,16 @@ public class Main {
         int laiNoChung = khoanNo1.getLai(today) + khoanno2.getLai(today);
         int laiNganHang = nganHang.getLais(today);
 
-        if (laiNganHang + thuNhap.getLuongChungDu() < laiNoChung)
+        if (laiNganHang < laiNoChung)
         {
-            if (laiNganHang + thuNhap.getLuongVoChong() + thuNhap.getLuongChungDu() < laiNoChung) {
+            if (laiNganHang + thuNhap.getLuongVoChong() < laiNoChung) {
                 return false;
             } else {
-                thuNhap.setLuongChungDu(thuNhap.getLuongVoChong() + thuNhap.getLuongChungDu() + laiNganHang - laiNoChung);
+                thuNhap.setThuNhapTraNo(thuNhap.getLuongVoChong() + laiNganHang - laiNoChung);
                 thuNhap.setLuongVoChong(0);
             }
         } else {
-            thuNhap.setLuongChungDu(thuNhap.getLuongChungDu() + laiNganHang - laiNoChung);
+            thuNhap.setThuNhapTraNo(laiNganHang - laiNoChung);
         }
         return true;   
     }

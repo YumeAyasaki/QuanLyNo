@@ -46,10 +46,10 @@ public class KhoanNo {
 
     public void input(Scanner scanner, Date today) {
         System.out.println("Nhap no: ");
-        System.out.print("Nhap khoan no: ");
+        System.out.print("Nhap so tien no: ");
         this.soTienNo = scanner.nextInt();
         this.ngayMuonNo = today;
-        System.out.print("Nhap ngay tra no: ");
+        System.out.println("Nhap ngay tra no: ");
         this.ngayTraNo.input(scanner);
         do {
             System.out.print("Nhap chu ky (thang): ");

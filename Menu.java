@@ -35,7 +35,8 @@ public class Menu {
         System.out.println("Luong: ");
         System.out.println("    + Vo chong: " + Integer.toString(thuNhap.getLuongVoChong()) +        
         " | Chung: " + Integer.toString(thuNhap.getLuongChung()) + 
-        " | Du: " + Integer.toString(thuNhap.getLuongChungDu()));
+        " | Du: " + Integer.toString(thuNhap.getLuongChungDu()) + 
+        " | Tien de tra no: " + Integer.toString(thuNhap.getThuNhapTraNo()));
 
         // Chi phi
         System.out.println("Chi phi: ");
@@ -50,8 +51,6 @@ public class Menu {
 
         // Khoan no
         System.out.println("No du kien thang nay:");
-        System.out.println("+ No chung: " + Integer.toString(khoanNo1.getLai(today) + khoanNo2.getLai(today)));
-
-        
+        System.out.println("+ No chung: " + Integer.toString(khoanNo1.getLai(today) + khoanNo2.getLai(today)));        
     }
 }

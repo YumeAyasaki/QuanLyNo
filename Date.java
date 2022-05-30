@@ -56,9 +56,9 @@ public class Date {
 
     public void input(Scanner scan)
     {
-        System.out.println("Nhap thang: ");
+        System.out.print("Nhap thang: ");
         this.month = scan.nextInt();        
-        System.out.println("Nhap nam: ");
+        System.out.print("Nhap nam: ");
         this.year = scan.nextInt();
     }
 
