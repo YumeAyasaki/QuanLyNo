@@ -1,21 +1,22 @@
 import java.util.Scanner;
 
-public class Luong {
+public class ThuNhap { // thuNhap
     private int luongVoChong = 0;
     private int luongChung = 0;
     private int luongChungDu = 0;
+    private int thuNhapTraNo = 0;
 
     // Constructor
-    public Luong() {
+    public ThuNhap() {
 
     }
 
-    public Luong(int luongVoChong, int luongChung) {
+    public ThuNhap(int luongVoChong, int luongChung) {
         this.luongVoChong = luongVoChong;
         this.luongChung = luongChung;
     }
 
-    public Luong(Luong luong) {
+    public ThuNhap(ThuNhap luong) {
         this.luongVoChong = luong.luongVoChong;
         this.luongChung = luong.luongChung;
     }
@@ -31,6 +32,10 @@ public class Luong {
 
     public int getLuongChungDu() {
         return luongChungDu;
+    }
+
+    public int getThuNhapTraNo() {
+        return thuNhapTraNo;
     }
 
     public int getLuong() {
@@ -52,6 +57,10 @@ public class Luong {
 
     public void setLuongChung(int luongChung) {
         this.luongChung = luongChung;
+    }
+
+    public void setThuNhapTraNo(int thuNhapTraNo) {
+        this.thuNhapTraNo = thuNhapTraNo;
     }
 
     public void input(Scanner scanner)

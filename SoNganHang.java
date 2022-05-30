@@ -4,23 +4,24 @@ public class SoNganHang {
     protected int soTienGui = 0;
     protected Date ngayGui = new Date();
     protected Date ngayTra = new Date();
-    protected Boolean kyHan = false; // false = 6 thang, true = 1 nam
+    protected double phanTramLai = 0;
 
     public SoNganHang() {
         
     }
 
-    public SoNganHang(int soTienGui, Date ngayGui, Boolean kyHan) {
+    public SoNganHang(int soTienGui, Date ngayGui, Date ngayTra) {
         this.soTienGui = soTienGui;
         this.ngayGui = ngayGui;
-        this.kyHan = kyHan;
+        this.ngayTra = ngayTra;
     }
 
     public SoNganHang(SoNganHang SoMoi)
     {
         this.soTienGui = SoMoi.soTienGui;
         this.ngayGui = SoMoi.ngayGui;
-        this.kyHan = SoMoi.kyHan;
+        this.ngayTra = SoMoi.ngayTra;
+        this.phanTramLai = SoMoi.phanTramLai;
     }
 
     public int getSoTienGui()
@@ -43,41 +44,29 @@ public class SoNganHang {
         this.ngayGui = ngayGui;
     }
 
-    public Boolean getKyHan()
+    public double getPhanTramLai()
     {
-        return this.kyHan;
+        return this.phanTramLai;
     }
 
-    public void setKyHan(Boolean kyHan)
+    public void setPhanTramLai(double phanTramLai)
     {
-        this.kyHan = kyHan;
-    }
-
-    public void setNgayTra(Date ngayGui)
-    {
-        this.ngayTra = ngayGui;
-        if (getKyHan()) {
-            this.ngayTra.plusMonths(12);
-        } else {
-            this.ngayTra.plusMonths(6);
-        }
+        this.phanTramLai = phanTramLai;
     }
 
     public int getLai()
     {
-        if (this.getKyHan()) {
-            return (int) (this.getSoTienGui() * 6.6 / 100 + this.getSoTienGui());
-        }
-        return (int) (this.getSoTienGui() * 6 / 100 + this.getSoTienGui());
+        return (int) (this.getSoTienGui() * this.getPhanTramLai() / 100 + this.getSoTienGui());
     }
 
-    public void input(Scanner scanner, Luong luong) {
+    public void input(Scanner scanner, ThuNhap thuNhap) {
+        this.ngayTra = ngayGui;
         System.out.println("Nhap so tien muon gui tiet kiem: ");
         boolean loop = true;
         int temp = 0;
         do {
             temp = scanner.nextInt();
-            if (temp <= luong.getLuongVoChong() && temp > 500000) {
+            if (temp <= thuNhap.getLuongVoChong() && temp > 50000) {
                 loop = false;
             } else {
                 System.out.println("So tien khong hop le !");
@@ -85,27 +74,11 @@ public class SoNganHang {
         } while (loop);
 
         this.setSoTienGui(temp);
-        luong.setLuongVoChong(luong.getLuongVoChong() - temp);
-        System.out.println("Chon ky han: \n 1. 6 thang (6%)\n 2. 1 nam (6.6%)");
-        loop = true;
-        do {
-            temp = scanner.nextInt();
-            switch (temp) {
-                case 1:
-                    this.setKyHan(false);
-                    loop = false;
-                    break;
-
-                case 2:
-                    this.setKyHan(true);
-                    loop = false;
-                    break;
-
-                default:
-                    System.out.println("Chon lai");
-                    break;
-            }
-        } while (loop);
-        setNgayTra(ngayGui);
+        thuNhap.setLuongVoChong(thuNhap.getLuongVoChong() - temp);
+        System.out.print("Nhap chu ky gui (thang): ");
+        temp = scanner.nextInt();
+        this.ngayTra.plusMonths(temp);
+        System.out.print("Nhap phan tram lai (?%): ");
+        this.phanTramLai = scanner.nextDouble();
     }
 }

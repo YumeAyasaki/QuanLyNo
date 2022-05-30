@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Date {
     protected int month = 05;
     protected int year = 2022;
@@ -50,5 +52,20 @@ public class Date {
 
     public int diffMonths(Date date) {
         return Math.abs(date.year * 12 + date.month - month - year * 12);
+    }
+
+    public void input(Scanner scan)
+    {
+        System.out.println("Nhap thang: ");
+        this.month = scan.nextInt();        
+        System.out.println("Nhap nam: ");
+        this.year = scan.nextInt();
+    }
+
+    public static Date max(Date date1, Date date2) {
+        if ((date1.year > date2.year) || ((date1.year == date2.year) && (date1.month > date2.month))) {
+            return date1;
+        }
+        return date2;
     }
 }

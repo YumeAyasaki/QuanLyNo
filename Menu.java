@@ -27,15 +27,15 @@ public class Menu {
         return choice;
     }
 
-    public void showStatus(Luong luong, ChiPhi chiPhi, NganHang nganHang, KhoanNo khoanNo1, KhoanNo khoanNo2, Date today) {
+    public void showStatus(ThuNhap thuNhap, ChiPhi chiPhi, NganHang nganHang, KhoanNo khoanNo1, KhoanNo khoanNo2, Date today) {
         // Lich
         System.out.println("Lich: " + Integer.toString(today.getMonth()) + "/" + Integer.toString(today.getYear()));
 
         // Luong
         System.out.println("Luong: ");
-        System.out.println("    + Vo chong: " + Integer.toString(luong.getLuongVoChong()) +        
-        " | Chung: " + Integer.toString(luong.getLuongChung()) + 
-        " | Du: " + Integer.toString(luong.getLuongChungDu()));
+        System.out.println("    + Vo chong: " + Integer.toString(thuNhap.getLuongVoChong()) +        
+        " | Chung: " + Integer.toString(thuNhap.getLuongChung()) + 
+        " | Du: " + Integer.toString(thuNhap.getLuongChungDu()));
 
         // Chi phi
         System.out.println("Chi phi: ");

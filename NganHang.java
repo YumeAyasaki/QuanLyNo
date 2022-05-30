@@ -3,9 +3,9 @@ import java.util.*;
 public class NganHang {
     Vector<SoNganHang> khoanGui = new Vector<>();
 
-    public void add(Scanner scanner, Luong luong) {
+    public void add(Scanner scanner, ThuNhap thuNhap) {
         SoNganHang soNganHang = new SoNganHang();
-        soNganHang.input(scanner, luong);
+        soNganHang.input(scanner, thuNhap);
         khoanGui.add(soNganHang);
     }
 
