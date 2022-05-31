@@ -1,20 +1,18 @@
 import java.util.Scanner;
 
-public class KhoanNo {
+public class KhoanNo implements Comparable<KhoanNo> {
     protected int soTienNo;
     protected Date ngayMuonNo = new Date();
     protected Date ngayTraNo = new Date();
     protected int chuKy;
     protected boolean linhHoat = false; // true: thang, linh hoat | false: nam, co dinh
     protected double phanTramLai = 0;
-    
-    public KhoanNo()
-    {
-        
+
+    public KhoanNo() {
+
     }
 
-    public KhoanNo(int soTienNo, int chuKy, boolean linhHoat, Date ngayTraNo)
-    {
+    public KhoanNo(int soTienNo, int chuKy, boolean linhHoat, Date ngayTraNo) {
         this.soTienNo = soTienNo;
         this.chuKy = chuKy;
         this.linhHoat = linhHoat;
@@ -44,6 +42,10 @@ public class KhoanNo {
         return (int) phanTramLai * soTienNo / 100;
     }
 
+    public int getTienNo() {
+        return soTienNo;
+    }
+
     public void input(Scanner scanner, Date today) {
         System.out.println("Nhap no: ");
         System.out.print("Nhap so tien no: ");
@@ -55,7 +57,7 @@ public class KhoanNo {
             System.out.print("Nhap chu ky (thang): ");
             this.chuKy = scanner.nextInt();
         } while (ngayTraNo.diffMonths(ngayMuonNo) < chuKy);
-        
+
         while (true) {
             System.out.print("No co thay doi theo thang (Y/N)? ");
             char c = scanner.next().charAt(0);
@@ -63,8 +65,7 @@ public class KhoanNo {
             if (c == 'Y') {
                 this.linhHoat = true;
                 break;
-            }
-            else if (c == 'N') {
+            } else if (c == 'N') {
                 this.linhHoat = false;
                 break;
             }
@@ -73,5 +74,15 @@ public class KhoanNo {
             System.out.print("Nhap phan tram lai: ");
             this.phanTramLai = scanner.nextDouble();
         }
+    }
+
+    public int compareTo(KhoanNo khoanNoKhac) {
+        if (ngayTraNo.isEqual(khoanNoKhac.getNgayTraNo())) {
+            return 0;
+        }
+        if (khoanNoKhac.getNgayTraNo().isGreater(ngayTraNo)) {
+            return -1;
+        }
+        return 1;
     }
 }

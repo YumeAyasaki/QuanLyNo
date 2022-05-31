@@ -7,7 +7,7 @@ public class SoNganHang {
     protected double phanTramLai = 0;
 
     public SoNganHang() {
-        
+
     }
 
     public SoNganHang(int soTienGui, Date ngayGui, Date ngayTra) {
@@ -16,46 +16,42 @@ public class SoNganHang {
         this.ngayTra = ngayTra;
     }
 
-    public SoNganHang(SoNganHang SoMoi)
-    {
+    public SoNganHang(SoNganHang SoMoi) {
         this.soTienGui = SoMoi.soTienGui;
         this.ngayGui = SoMoi.ngayGui;
         this.ngayTra = SoMoi.ngayTra;
         this.phanTramLai = SoMoi.phanTramLai;
     }
 
-    public int getSoTienGui()
-    {
+    public int getSoTienGui() {
         return this.soTienGui;
     }
 
-    public void setSoTienGui(int soTienGui)
-    {
+    public void setSoTienGui(int soTienGui) {
         this.soTienGui = soTienGui;
     }
 
-    public Date getNgayGui()
-    {
+    public Date getNgayGui() {
         return this.ngayGui;
     }
 
-    public void setNgayGui(Date ngayGui)
-    {
+    public void setNgayGui(Date ngayGui) {
         this.ngayGui = ngayGui;
     }
 
-    public double getPhanTramLai()
-    {
+    public double getPhanTramLai() {
         return this.phanTramLai;
     }
 
-    public void setPhanTramLai(double phanTramLai)
-    {
+    public void setPhanTramLai(double phanTramLai) {
         this.phanTramLai = phanTramLai;
     }
 
-    public int getLai()
-    {
+    public Date getNgayTra() {
+        return ngayTra;
+    }
+
+    public int getLai() {
         return (int) (this.getSoTienGui() * this.getPhanTramLai() / 100 + this.getSoTienGui());
     }
 

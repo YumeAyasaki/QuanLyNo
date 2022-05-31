@@ -19,4 +19,8 @@ public class NganHang {
         }
         return ans;
     }
+
+    public Vector<SoNganHang> getKhoanGui() {
+        return khoanGui;
+    }
 }
