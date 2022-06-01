@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Vector;
 
 public class Menu {
     protected Boolean loop = true;
@@ -12,12 +13,13 @@ public class Menu {
         System.out.println("|*Option 3:       Gui tien vao ngan hang      *|");
         System.out.println("|*Option 4:            Tra tien no            *|");
         System.out.println("|*Option 5:        Sang thang tiep theo       *|");
-        System.out.println("|*Option 6:         Thoat chuong trinh        *|");
+        System.out.println("|*Option 6:             Du doan no            *|");
+        System.out.println("|*Option 7:         Thoat chuong trinh        *|");
         System.out.println("|*--------------------------------------------*|");
 
         do {
             choice = scanner.nextInt();
-            if (choice >= 1 && choice <= 6) {
+            if (choice >= 1 && choice <= 7) {
                 loop = false;
             }
             else {
@@ -27,7 +29,7 @@ public class Menu {
         return choice;
     }
 
-    public void showStatus(ThuNhap thuNhap, ChiPhi chiPhi, NganHang nganHang, KhoanNo khoanNo1, KhoanNo khoanNo2, Date today) {
+    public void showStatus(ThuNhap thuNhap, ChiPhi chiPhi, NganHang nganHang, Vector<KhoanNo> khoanNos, Date today) {
         // Lich
         System.out.println("Lich: " + Integer.toString(today.getMonth()) + "/" + Integer.toString(today.getYear()));
 
@@ -50,7 +52,11 @@ public class Menu {
         System.out.println("   + Lai chung: " + Integer.toString(nganHang.getLais(today)));
 
         // Khoan no
+        int noChung = 0;
+        for (int i = 0; i < khoanNos.size(); ++i) {
+            noChung += khoanNos.get(i).getLai(today);
+        }
         System.out.println("No du kien thang nay:");
-        System.out.println("+ No chung: " + Integer.toString(khoanNo1.getLai(today) + khoanNo2.getLai(today)));        
+        System.out.println("   + No chung: " + Integer.toString(noChung));
     }
 }

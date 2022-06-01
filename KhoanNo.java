@@ -7,6 +7,7 @@ public class KhoanNo implements Comparable<KhoanNo> {
     protected int chuKy;
     protected boolean linhHoat = false; // true: thang, linh hoat | false: nam, co dinh
     protected double phanTramLai = 0;
+    protected boolean daTra = false;
 
     public KhoanNo() {
 
@@ -17,9 +18,9 @@ public class KhoanNo implements Comparable<KhoanNo> {
         this.chuKy = chuKy;
         this.linhHoat = linhHoat;
         this.ngayTraNo = ngayTraNo;
-        if (linhHoat) {
-            phanTramLai = 6.6;
-        }
+        // if (linhHoat) {
+        //     phanTramLai = 6.6;
+        // }
     }
 
     public Date getNgayTraNo() {
@@ -29,21 +30,27 @@ public class KhoanNo implements Comparable<KhoanNo> {
     public void inputLai(Scanner scanner) {
         if (linhHoat == true) {
             System.out.print("Nhap phan tram lai cua thang nay: ");
-            phanTramLai = scanner.nextDouble();
+            this.phanTramLai = scanner.nextDouble();
         }
     }
 
     public int getLai(Date date) {
-        if (linhHoat == false) {
-            if (ngayTraNo.diffMonths(date) % 12 != 0) {
-                return 0;
-            }
+        if (ngayTraNo.diffMonths(date) % chuKy != 0) {
+            return 0;
         }
-        return (int) phanTramLai * soTienNo / 100;
+        return (int) (soTienNo / 100 * phanTramLai);
     }
 
     public int getTienNo() {
         return soTienNo;
+    }
+
+    public boolean getDaTra() {
+        return daTra;
+    }
+
+    public void setDaTra(boolean daTra) {
+        this.daTra = daTra;
     }
 
     public void input(Scanner scanner, Date today) {

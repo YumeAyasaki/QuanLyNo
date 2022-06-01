@@ -52,11 +52,12 @@ public class SoNganHang {
     }
 
     public int getLai() {
-        return (int) (this.getSoTienGui() * this.getPhanTramLai() / 100 + this.getSoTienGui());
+        return (int) (this.getSoTienGui() / 100 * this.getPhanTramLai() + this.getSoTienGui());
     }
 
-    public void input(Scanner scanner, ThuNhap thuNhap) {
-        this.ngayTra = ngayGui;
+    public void input(Scanner scanner, ThuNhap thuNhap, Date today) {
+        ngayGui = new Date(today);
+        this.ngayTra = new Date(ngayGui);
         System.out.println("Nhap so tien muon gui tiet kiem: ");
         boolean loop = true;
         int temp = 0;
