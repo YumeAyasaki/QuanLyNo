@@ -14,12 +14,14 @@ public class Menu {
         System.out.println("|*Option 4:            Tra tien no            *|");
         System.out.println("|*Option 5:        Sang thang tiep theo       *|");
         System.out.println("|*Option 6:             Du doan no            *|");
-        System.out.println("|*Option 7:         Thoat chuong trinh        *|");
+        System.out.println("|*Option 7:          Hien thi khoan no        *|");
+        System.out.println("|*Option 8:        Hien thi so ngan hang      *|");
+        System.out.println("|*Option 9:         Thoat chuong trinh        *|");
         System.out.println("|*--------------------------------------------*|");
 
         do {
             choice = scanner.nextInt();
-            if (choice >= 1 && choice <= 7) {
+            if (choice >= 1 && choice <= 9) {
                 loop = false;
             }
             else {

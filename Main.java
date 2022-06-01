@@ -168,6 +168,27 @@ public class Main {
         return true;
     }
 
+    public static void hienThiNo(Vector<KhoanNo> khoanNos) {
+        System.out.println("Cac khoan no: ");
+        for (int i = 0; i < khoanNos.size(); ++i) {
+            KhoanNo khoanNo = khoanNos.get(i);
+            System.out.println(Integer.toString(i + 1) + ". Khoan no: " 
+            + Integer.toString(khoanNo.getTienNo()) + " | Thang tra: "
+            + Integer.toString(khoanNo.getNgayTraNo().getMonth()) + "/" + Integer.toString(khoanNo.getNgayTraNo().getMonth())
+            + (khoanNo.getDaTra() ? " | Da tra" : ""));
+        }
+    }
+
+    public static void hienThiNganHang(NganHang nganHang) {
+        System.out.println("Cac so ngan hang: ");
+        for (int i = 0; i < nganHang.getKhoanGui().size(); ++i) {
+            SoNganHang soNganHang = nganHang.getKhoanGui().get(i);
+            System.out.println(Integer.toString(i + 1) + ". Khoan no: " 
+            + Integer.toString(soNganHang.getSoTienGui()) + " | Thang tra: "
+            + Integer.toString(soNganHang.getNgayTra().getMonth()) + "/" + Integer.toString(soNganHang.getNgayTra().getMonth()));
+        }
+    }
+
     public static void main(String[] args) {
         // Initialize
         Scanner scanner = new Scanner(System.in);
@@ -279,6 +300,12 @@ public class Main {
                     duDoanNo(thuNhap, chiPhi, nganHang, khoanNos, today);
                     break;
                 case 7:
+                    hienThiNo(khoanNos);
+                    break;
+                case 8:
+                    hienThiNganHang(nganHang);
+                    break;
+                case 9:
                     isExit = true;
                     break;
                 default:
